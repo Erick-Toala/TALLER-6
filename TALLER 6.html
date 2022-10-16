@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>TALLER 6</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="inicio">
+            <!-- Inicio de la pagina que mostrar un titulo y el nombre del autor -->
+            <h2 class="texto" id="texto">Taller 6<br><span>Toala Intriago Erick Alexander</span></h2>
+        </div>
+            <!-- contenedor de la pagina que contendrá las opciones en botones-->
+            <div class="caja_botones">
+                <!-- botón para llamar a la funcion mesesAnio() -->
+                <button class="boton" onclick="mesesAnio()" >
+                    <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                    Mostrar meses del año
+                </button>
+                <!-- botón extra para cambiar color de fondo y texto -->
+                <button class="boton_resetear"  onclick="cambiarFondo()" >
+                    <span><i class="fa fa-moon-o" aria-hidden="true"></i></span>
+                </button>
+                <!-- botón extra para restablecer el color de fondo y texto -->
+                <button class="boton_resetear"  onclick="resetear()" >
+                    <span><i class="fa fa-sun-o" aria-hidden="true"></i></span>
+                </button>
+                <!-- botón para llamar a la funcion productoAlimenticio() -->
+                <button class="boton" onclick="productoAlimenticio()">
+                    <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                    Producto Alimenticio
+                </button>
+            </div>
+        <!-- contenedor para rellenar el espacio sobrante con imagenes .gif-->
+        <div class="imagenesBox">
+            <div class="bowser">
+                <img src="bowser.gif">
+            </div>
+            <div class="mario">
+                <img src="mario2.gif">
+            </div>
+        </div>
+    </div>
+    <!-- codigo de javascript para las funciones que van a realizar cada proceso de las opciones anteriores-->
+    <script type="text/javascript"> 
+        //funcion que crea un array y guarda los meses del año
+        function mesesAnio(){
+            //array para almacenar todos los meses del año
+            var Meses = new Array ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",   "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+            //mediante un bucle for mostramos en alerta el contenido del array
+            for(i=0; i < Meses.length; i++){      
+                alert("Meses del año [Array]:\n\n"+Meses[i]);
+            };
+        }
+        //funcion que guarda tres instancias en un array con respecto al un Producto alimenticio
+        function productoAlimenticio(){
+            //definimos un objeto llamado Producto_alimenticio
+            var Producto_alimenticio = new Object();
+                //creamos tres instancias de este objeto con sus propiedades
+                Producto_alimenticio.codigo = "COD001";
+                Producto_alimenticio.nombre = "Producto 1";     
+                Producto_alimenticio.precio = "$ 50.00";           
+                //guardamos las instancias en un array
+                var array_almacenar = new Array (Producto_alimenticio.codigo, Producto_alimenticio.nombre, Producto_alimenticio.precio);
+                //metodo para imprimir los datos en el array
+                imprimeDatos(array_almacenar);  
+                //imprimeDatos recibe un datoParametro que es el array
+                function imprimeDatos(datoParametro){      
+                    ///mediante un bucle for mostramos en alerta el contenido del array que lo contiene datoParametro
+                    for(i=0; i < datoParametro.length; i++){       
+                        alert("Producto Alimenticio [Array]:\n\n"+datoParametro[i]+"")              
+                        }   
+                    } 
+        }
+        //funiones adicionales para cambiar y restablecer el color de fondo y texto
+        
+        function cambiarFondo(){
+            document.body.style.backgroundColor = 'gray';
+
+            var texto =document.getElementById("texto");
+            texto.style.color = 'white';
+        }
+        function resetear(){
+            document.body.style.backgroundColor = 'white';
+
+            var texto =document.getElementById("texto");
+            texto.style.color = 'black';
+        } 
+        </script>
+</body>
+</html>
